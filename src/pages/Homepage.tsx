@@ -4,13 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteTaskAction,
   getTasksAction,
+  postTaskAction,
+  putTaskAction,
 } from "../app/features/task/taskAsyncActions";
 import { RootState } from "../store/reducers";
 import FormikForm from "../app/components/Formik-Forms/formik-form";
-import {
-  markCompletedAction,
-  updateTasksAction,
-} from "../app/features/task/taskSlice";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -36,7 +34,7 @@ const Homepage = () => {
       </section>
 
       <section className={"MainBody"}>
-        <FormikForm />
+        <FormikForm handleCreateAction={postTaskAction} />
       </section>
 
       <section className={"SecondBody"}>
@@ -61,11 +59,16 @@ const Homepage = () => {
 
               <div className={"Buttons"}>
                 <div>
+                  {/*to hide the button if isComplete is true */}
                   {!t.isComplete && (
                     <button
                       id="button-complete"
                       onClick={() => {
-                        dispatch(markCompletedAction(t));
+                        {
+                          /*to send a task with isComplete == true (change in the DB)*/
+                        }
+                        const updatedTask = { ...t, isComplete: true };
+                        dispatch(putTaskAction(updatedTask));
                       }}
                     >
                       Complete

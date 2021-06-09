@@ -6,8 +6,8 @@ import {
   deleteTaskAction,
   getTasksAction,
   postTaskAction,
+  putTaskAction,
 } from "./taskAsyncActions";
-import { stat } from "fs";
 
 //task state
 export const initialState: TaskStateType = {
@@ -84,11 +84,29 @@ export const taskSlice = createSlice({
       console.log(action?.error);
       state.tasks = state.tempData as Task[];
     });
+
+    //put / update
+    builder.addCase(putTaskAction.pending, (state, action) => {
+      state.loading = true;
+    });
+
+    builder.addCase(putTaskAction.fulfilled, (state, action) => {
+      state.tasks = state.tasks.map((t) => {
+        if (t.id === action.meta.arg.id) {
+          t.isComplete = true;
+        }
+        return t;
+      });
+
+      builder.addCase(putTaskAction.rejected, (state, action) => {
+        console.log(action?.error);
+        state.loading = false;
+      });
+    });
   },
 });
 
 /*non-async actions (reducers) */
-export const { softDeleteTaskAction, updateTasksAction, markCompletedAction } =
-  taskSlice.actions;
+export const { softDeleteTaskAction, updateTasksAction } = taskSlice.actions;
 
 export default taskSlice.reducer;

@@ -3,27 +3,42 @@
     {
       "id": 2,
       "name": "C#",
-      "description": "Fundamentals C#"
+      "description": "Fundamentals C#",
+      "isComplete": true
     },
     {
       "id": 1,
       "name": "JavaScript",
-      "description": "Fundamentals of JavaScript"
+      "description": "Fundamentals of JavaScript",
+      "isComplete": true
     },
     {
       "id": 3,
       "name": "TypeScript",
-      "description": "Fundamentals of TypeScript"
+      "description": "Fundamentals of TypeScript",
+      "isComplete": true
     },
     {
       "id": 4,
       "name": "React Native",
-      "description": "Fundamentals of React Native"
+      "description": "Fundamentals of React Native",
+      "isComplete": false
     },
     {
       "id": 5,
       "name": "Python",
-      "description": "Fundamentals of Python"
+      "description": "Fundamentals of Python",
+      "isComplete": false
+    },
+    {
+      "id": 6,
+      "name": "Django",
+      "description": "Fundamentals of Django"
+    },
+    {
+      "id": 7,
+      "name": "Ruby",
+      "description": "Fundamentals of Ruby"
     }
   ]
 }

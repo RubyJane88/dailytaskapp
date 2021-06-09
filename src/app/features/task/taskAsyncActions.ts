@@ -4,6 +4,7 @@ import {
   deleteTaskAxios,
   getTaskAxios,
   postTaskAxios,
+  putTaskAxios,
 } from "../../../services/taskService";
 import { Task } from "models/TaskModel";
 
@@ -28,5 +29,12 @@ export const deleteTaskAction = createAsyncThunk(
   TaskActionTypes.REMOVE_TASK_BY_ID,
   async (id: number) => {
     return await deleteTaskAxios(id);
+  }
+);
+
+export const putTaskAction = createAsyncThunk(
+  TaskActionTypes.UPDATE_TASK,
+  async (task: Task) => {
+    return await putTaskAxios(task);
   }
 );
