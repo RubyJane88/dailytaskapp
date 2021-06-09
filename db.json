@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": 2,
+      "name": "C#",
+      "description": "Fundamentals C#"
+    },
+    {
+      "id": 1,
+      "name": "JavaScript",
+      "description": "Fundamentals of JavaScript"
+    },
+    {
+      "id": 3,
+      "name": "TypeScript",
+      "description": "Fundamentals of TypeScript"
+    },
+    {
+      "id": 4,
+      "name": "React Native",
+      "description": "Fundamentals of React Native"
+    },
+    {
+      "id": 5,
+      "name": "Python",
+      "description": "Fundamentals of Python"
+    }
+  ]
+}
