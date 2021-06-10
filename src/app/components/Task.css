@@ -1,146 +1,151 @@
-
-.MainTitle {
-    color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+html {
+  font-size: 62.5%;
 }
 
-
-.MainBody{
-    background: dimgray;
-    flex-direction: row;
-    padding: 1rem;
-
-}
-
-.MainBody .MainAddTask {
-    display: flex;
-    background: dimgray;
-    flex-direction: row;
-    padding: 1rem;
-    align-items: center;
-    justify-content: space-evenly;
-
-}
-
-.MainAddTask .AddName {
-    margin-right: 2rem;
-}
-
-.MainAddTask .AddDescription {
-    margin-right: 1rem;
-}
-
-.MainBodyTasks .TaskTitle h3 {
-    color: darkorange;
-}
-
-/*.MainBody .AddTaskButton {*/
-/*    background: orange;*/
-/*    border-radius: 10px;*/
-/*    color: whitesmoke;*/
-/*    height: 3rem;*/
-/*    width: 5rem;*/
-/*    padding: 10px;*/
-/*    margin: 2px 3px;*/
-
-/*}*/
-
-
-.SecondBody {
-    background: dimgray;;
-    display: grid;
+@media all and (max-width: 400px) {
+  .Body {
     flex-direction: column;
-    grid-template-columns: 10rem 5rem 10rem;
-    grid-template-rows: repeat(2, auto);
-    justify-content: start;
-    padding: 1rem;
-    margin-top: 2px;
-    min-width: 600px;
+    display: flex;
+  }
+  .column {
+    width: 100%;
+  }
+}
 
+.Body {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.Main-todo {
+  background: dimgray;
+  flex-direction: row;
+  padding: 1.5rem;
+  font-size: 18px;
+  margin: auto;
+  box-shadow: none;
+  max-width: 100%;
+}
+
+.Main-todo .MainAddTask {
+  display: flex;
+  background: dimgray;
+  flex-direction: row;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.AddName {
+  margin-right: 1rem;
+}
+
+.AddDescription {
+  margin-right: 1rem;
+}
+
+.TaskTitle h3 {
+  color: darkorange;
+}
+
+.Second-todo {
+  background: dimgray;
+  display: grid;
+  flex-direction: column;
+  /*grid-template-columns: repeat(2, 2fr);*/
+  /*grid-template-rows: repeat(2, auto);*/
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  max-width: 100%;
 }
 
 .SecondBodyTodo {
-    width:600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid gray;
-    margin: 2px 2px;
-
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px gray solid;
+  margin: 2px 2px;
 }
 
-
-
-.SecondBodyTodo .TodoDescription {
-    font-size: 1rem;
-    margin-top: 2px;
+.TodoDescription {
+  font-size: 1.6rem;
+  margin-top: 2px;
 }
 
-.SecondBody .TodoList {
-    color: darkorange;
-    margin-top: 8px;
+.TodoList {
+  color: darkorange;
+  margin-top: 8px;
 }
 
 .Buttons {
-    display: flex;
-    height: 100%;
-    padding: 8px;
-    margin-bottom: 1rem;
+  display: flex;
+  height: 100%;
+  padding: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 #button-complete {
-    color: green;
-    border: 1px solid green;
-    margin-right: 5px;
-    padding: 3px 10px;
-    border-radius: 8px;
-
+  color: green;
+  border: 1px solid green;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
+
+#button-complete:hover {
+  background-color: darkgreen;
+  border: 1px solid green;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+}
+
 #button-delete {
-    color: red;
-    border: 1px solid red;
-    padding: 3px 10px;
-    border-radius: 8px;
+  color: red;
+  border: 1px solid red;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
-#isCompleted {
-    text-decoration: line-through;
-    text-decoration-color: red;
+#button-delete:hover {
+  background-color: darkred;
+  color: white;
+  border: 1px solid red;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 .FormikForm {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    grid-template-rows: repeat(2, 1fr);
-    justify-content: center;
-    align-content: center;
-    margin-top: 1rem;
-
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.FormikForm .AddTaskButton{
-    background: orange;
-    border-radius: 10px;
-    color: whitesmoke;
-    height: 3rem;
-    width: 5rem;
-    padding: 10px;
-    margin: 2px 3px;
+.AddTaskButton {
+  border-radius: 20px;
+  color: white;
+  width: 100%;
+  padding: 5px 20px;
+  border: darkorange;
+  background-color: darkorange;
 }
-
-.FormikForm .FormikDescription {
-
-}
-
 
 .InputForm {
-    border-radius: 10px;
-    border-color: darkorange;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    margin-top: 0.5rem;
-
+  border-radius: 10px;
+  border-color: darkorange;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  width: 16rem;
+  box-shadow: none;
+  cursor: pointer;
 }

@@ -1,8 +1,15 @@
 import React from "react";
 
-import { ErrorMessage } from "formik";
+import { ErrorMessage, useFormikContext } from "formik";
 
-const FormikTextfield = ({ id, formikProps, placeholder, label }) => {
+type Props = {
+  id: string;
+  label?: string;
+  placeholder?: string;
+};
+
+const FormikTextfield = ({ id, label, placeholder }: Props) => {
+  const formikProps = useFormikContext();
   return (
     <div>
       <section className={"Formik-Textfield"}>

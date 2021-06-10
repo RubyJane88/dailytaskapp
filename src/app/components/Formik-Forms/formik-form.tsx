@@ -3,7 +3,6 @@ import { Form, Formik } from "formik";
 import { formsInitialValues } from "./forms-initial-values";
 import { validationSchema } from "./yup-validationschema";
 import FormikTextfield from "./formik-textfield";
-import FormikValuesViewer from "../shared/formik-values-viewer";
 import { useDispatch } from "react-redux";
 
 type Props = {
@@ -17,9 +16,11 @@ const FormikForm = ({ handleCreateAction }: Props) => {
     <Formik
       initialValues={formsInitialValues}
       validationSchema={validationSchema}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         dispatch(handleCreateAction(values));
-        actions.resetForm();
+        values.name = "";
+        values.description = "";
+        // actions.resetForm({});
       }}
     >
       {(formikProps) => (
@@ -27,30 +28,22 @@ const FormikForm = ({ handleCreateAction }: Props) => {
           <Form className={"FormikForm"}>
             <div>
               <div className={"FormikName"}>Name</div>
-              <FormikTextfield
-                id={"name"}
-                formikProps={formikProps}
-                placeholder={""}
-                label={"Name"}
-              />
+              <FormikTextfield id={"name"} label={"Name"} />
             </div>
 
             <div>
               <div className={"FormikDescription"}>Description</div>
-              <FormikTextfield
-                id={"description"}
-                formikProps={formikProps}
-                placeholder={""}
-                label={"Description"}
-              />
+              <FormikTextfield id={"description"} label={"Description"} />
             </div>
 
             <div>
-              <button className={"AddTaskButton"}>Add Task</button>
+              <button type={"submit"} className={"AddTaskButton"}>
+                Add Todo
+              </button>
             </div>
           </Form>
 
-          <FormikValuesViewer formikProps={formikProps} />
+          {/*<FormikValuesViewer formikProps={formikProps} />*/}
         </>
       )}
     </Formik>

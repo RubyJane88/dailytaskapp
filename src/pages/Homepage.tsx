@@ -29,15 +29,15 @@ const Homepage = () => {
 
   return (
     <>
-      <section className={"MainTitle"}>
+      <section className={"Body"}>
         <h1>My Todos</h1>
       </section>
 
-      <section className={"MainBody"}>
+      <section className={"Main-todo"}>
         <FormikForm handleCreateAction={postTaskAction} />
       </section>
 
-      <section className={"SecondBody"}>
+      <section className={"Second-todo"}>
         <div>
           {tasks.map((t) => (
             <div className={"SecondBodyTodo"} key={t.id}>
