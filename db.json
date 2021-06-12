@@ -4,7 +4,7 @@
       "id": 1,
       "name": "JavaScript",
       "description": "Fundamentals of JavaScript",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 5,
@@ -16,7 +16,7 @@
       "id": 6,
       "name": "Django",
       "description": "Fundamentals of Django",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 7,
@@ -28,6 +28,24 @@
       "id": 8,
       "name": "TypeScript",
       "description": "Superset of JS",
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "name": "HTML and CSS",
+      "description": "Fundamentals of HTML and CSS",
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "name": "Docker",
+      "description": "Fundamentals of Docker",
+      "isComplete": false
+    },
+    {
+      "id": 4,
+      "name": "React Native",
+      "description": "Fundamentals of React Native",
       "isComplete": false
     }
   ]

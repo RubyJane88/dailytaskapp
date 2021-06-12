@@ -31,63 +31,63 @@ const Homepage = () => {
     <>
       <section className={"Body"}>
         <h1>My Todos</h1>
-      </section>
 
-      <section className={"Main-todo"}>
-        <FormikForm handleCreateAction={postTaskAction} />
-      </section>
+        <section className={"Main-todo"}>
+          <FormikForm handleCreateAction={postTaskAction} />
+        </section>
 
-      <section className={"Second-todo"}>
-        <div>
-          {tasks.map((t) => (
-            <div className={"SecondBodyTodo"} key={t.id}>
-              <div
-                style={{
-                  textDecoration: t.isComplete ? "line-through" : "",
-                }}
-              >
-                <div>
-                  <article className={"TodoList"}>{t.name}</article>
+        <section className={"Second-todo"}>
+          <div>
+            {tasks.map((t) => (
+              <div className={"SecondBodyTodo"} key={t.id}>
+                <div
+                  style={{
+                    textDecoration: t.isComplete ? "line-through" : "",
+                  }}
+                >
+                  <div>
+                    <article className={"TodoList"}>{t.name}</article>
+                  </div>
+
+                  <div>
+                    <article className={"TodoDescription"} style={{}}>
+                      {t.description}
+                    </article>
+                  </div>
                 </div>
 
-                <div>
-                  <article className={"TodoDescription"} style={{}}>
-                    {t.description}
+                <div className={"Buttons"}>
+                  <div>
+                    {/*to hide the button if isComplete is true */}
+                    {!t.isComplete && (
+                      <button
+                        id="button-complete"
+                        onClick={() => {
+                          {
+                            /*to send a task with isComplete == true (change in the DB)*/
+                          }
+                          const updatedTask = { ...t, isComplete: true };
+                          dispatch(putTaskAction(updatedTask));
+                        }}
+                      >
+                        Complete
+                      </button>
+                    )}
+                  </div>
+
+                  <article>
+                    <button
+                      id="button-delete"
+                      onClick={() => dispatch(deleteTaskAction(t.id))}
+                    >
+                      Delete
+                    </button>
                   </article>
                 </div>
               </div>
-
-              <div className={"Buttons"}>
-                <div>
-                  {/*to hide the button if isComplete is true */}
-                  {!t.isComplete && (
-                    <button
-                      id="button-complete"
-                      onClick={() => {
-                        {
-                          /*to send a task with isComplete == true (change in the DB)*/
-                        }
-                        const updatedTask = { ...t, isComplete: true };
-                        dispatch(putTaskAction(updatedTask));
-                      }}
-                    >
-                      Complete
-                    </button>
-                  )}
-                </div>
-
-                <article>
-                  <button
-                    id="button-delete"
-                    onClick={() => dispatch(deleteTaskAction(t.id))}
-                  >
-                    Delete
-                  </button>
-                </article>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
       </section>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
 import { Provider } from "react-redux";
 import { configureAppStore } from "./store/configureStore";
 import { BrowserRouter } from "react-router-dom";
@@ -11,7 +11,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className={"App-header"}>
+        <div>
           <Router />
         </div>
       </BrowserRouter>
